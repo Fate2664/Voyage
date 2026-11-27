@@ -21,3 +21,24 @@ struct FOceanSurfaceSample
 	double Height = 0.0;
 	FVector Normal = FVector::UpVector;
 };
+
+USTRUCT(BlueprintType)
+struct VOYAGEOCEAN_API FGerstnerWave
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Wave, meta = (ClampMin = "10", Units = "Centimeters"))
+	float WaveLength = 6000.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Wave, meta = (ClampMin = "10", Units = "Centimeters"))
+	float Amplitude = 100.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Wave, meta = (Units = "Degrees"))
+	float DirectionDegrees = 0.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Wave, meta = (ClampMin = "0", ClampMax = "1"))
+	float Steepness = 0.5f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Wave, meta = (Units = "Degrees"))
+	float PhaseDegrees = 0.f;
+};
